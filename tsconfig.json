@@ -29,7 +29,7 @@
   "include": [
     "src/components",
     "src/custom.d.ts"
-  ],
+, "src/classes/Guitar.ts"  ],
   "exclude": [
     "node_modules",
     "build",
