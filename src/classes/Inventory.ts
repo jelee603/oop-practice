@@ -20,26 +20,32 @@ export class Inventory {
 
     search = (searchGuitar: Guitar) => {
         const guitars = this.guitars;
+        const matchingGuitars = [];
 
-        for (let i = 0; i < guitars.length; i++) {
-            const guitar = guitars[i];
+        if (guitars.length) {
+            for (let i = 0; i < guitars.length; i++) {
+                const guitar = guitars[i];
 
-            if (searchGuitar.getBuilder() != guitar.getBuilder())
-                continue;
+                if (searchGuitar.getBuilder() != guitar.getBuilder())
+                    continue;
 
-            const model = searchGuitar.getModel().toLocaleLowerCase();
-            if ((model != null) && (model != "") && model != guitar.getModel().toLocaleLowerCase()) {
-                continue;
+                const model = searchGuitar.getModel().toLocaleLowerCase();
+                if ((model != null) && (model != "") && model != guitar.getModel().toLocaleLowerCase()) {
+                    continue;
+                }
+
+                if (searchGuitar.getType() != guitar.getType()) {
+                    continue;
+                }
+                if (searchGuitar.getTopWood() != guitar.getTopWood()) {
+                    continue;
+                }
+                matchingGuitars.push(guitar);
             }
-            if (searchGuitar.getType() != guitar.getType()) {
-                continue;
-            }
-            if (searchGuitar.getTopWood() != guitar.getTopWood()) {
-                continue;
-            }
-            return guitar;
+            return matchingGuitars;
+        } else {
+            return null;
         }
-        return null;
     }
 
     

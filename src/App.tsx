@@ -1,4 +1,4 @@
-import FinderGuitar from './FinderGuitar';
+import FinderGuitar from './components/FinderGuitar';
 
 function App() {
   return (
