@@ -1,22 +1,13 @@
-import { Builder, Type, Wood  } from "../types/index";
-
+import { GuitarSpec } from './GuitarSpec';
 export class Guitar {
     serialNumber: string;
     price: number;
-    builder: Builder;
-    model: string;
-    type: Type;
-    backWood: Wood;
-    topWood: Wood;
+    spec: GuitarSpec;
     
-    constructor(serialNumber: string, price: number, builder: Builder, model: string, type: Type, backWood: Wood, topWood: Wood) {
+    constructor(serialNumber: string, price: number, spec: GuitarSpec) {
         this.serialNumber = serialNumber;
         this.price = price;
-        this.builder = builder;
-        this.model = model;
-        this.type = type;
-        this.backWood = backWood;
-        this.topWood = topWood;
+        this.spec = spec;
     }
 
     getSerialNumber = () => {
@@ -31,25 +22,7 @@ export class Guitar {
         this.price = newPrice;
     }
 
-    getBuilder = () => {
-        return this.builder;
+    getSpec = () => {
+        return this.spec;
     }
-
-    getModel = () => {
-        return this.model;
-    }
-
-    getType = () => {
-        return this.type;
-    }
-
-    getBackWood = () => {
-        return this.backWood;
-    }
-
-    getTopWood = () => {
-        return this.topWood;
-    }
-
-
 }
