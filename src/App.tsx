@@ -1,8 +1,8 @@
-import FinderGuitar from './components/FinderGuitar';
+import DogDoorSimulator from './components/DogDoorSimulator';
 
 function App() {
   return (
-    <FinderGuitar/>
+    <DogDoorSimulator/>
   );
 }
 
