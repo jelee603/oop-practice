@@ -1,8 +1,8 @@
 import { ChangeEvent, useState } from 'react';
-import { Guitar } from '../classes/Guitar';
-import { GuitarSpec } from '../classes/GuitarSpec';
-import { Inventory } from '../classes/Inventory';
-import { Type, Builder, Wood } from '../types';
+import { Guitar } from '../classes/FinderGuitar/Guitar';
+import { GuitarSpec } from '../classes/FinderGuitar/GuitarSpec';
+import { Inventory } from '../classes/FinderGuitar/Inventory';
+import { Type, Builder, Wood } from '../classes/FinderGuitar/types';
 
 const FinderGuitar = () => {
     const [result, setResult] = useState<string>('');

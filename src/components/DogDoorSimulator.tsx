@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { DogDoor } from '../classes/DogDoor';
-import { Remote } from '../classes/Remote';
+import { DogDoor } from '../classes/DogDoorSimulator/DogDoor';
+import { Remote } from '../classes/DogDoorSimulator/Remote';
 
 const door = new DogDoor();
 const remote = new Remote(door);

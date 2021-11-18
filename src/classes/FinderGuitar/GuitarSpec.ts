@@ -1,4 +1,4 @@
-import { Builder, Type, Wood } from '../types/index';
+import { Builder, Type, Wood } from './types/index';
 
 export class GuitarSpec {
   builder: Builder;

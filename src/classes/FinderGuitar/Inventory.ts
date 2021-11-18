@@ -1,6 +1,6 @@
 import { Guitar } from "./Guitar";
 import { GuitarSpec } from "./GuitarSpec";
-import { Builder, Type, Wood  } from "../types/index";
+import { Builder, Type, Wood  } from "./types/index";
 export class Inventory {
     guitars: Array<Guitar>;
 

@@ -28,8 +28,9 @@
   },
   "include": [
     "src/components",
-    "src/custom.d.ts"
-, "src/classes/Guitar.ts"  ],
+    "src/custom.d.ts", 
+    "src/classes"  
+  ],
   "exclude": [
     "node_modules",
     "build",
