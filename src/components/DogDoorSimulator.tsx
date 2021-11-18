@@ -23,6 +23,9 @@ const DogDoorSimulator = () => {
     }
 
     function showLog(text: string) {
+        if (text.includes('closes')) {
+            setButtonDisabled(false);
+        }
         setLog((prevArray) => [...prevArray, text]);
     }
 
