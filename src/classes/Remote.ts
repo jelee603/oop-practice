@@ -15,6 +15,13 @@ export class Remote {
         } else {
             this.door.open(callback);
         }
+
+        this.door.progress(callback);
+
+        const timer = setTimeout(() => {
+            this.door.close(callback);   
+            clearTimeout(timer);
+        }, 5000);
     } 
     
 }

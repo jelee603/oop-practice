@@ -19,4 +19,13 @@ export class DogDoor {
         callback('The dog door closes');
     }
 
+    progress = (callback: Function) => {
+        callback(`\nFido has gone outside...`);
+        const timer = setTimeout(() => {
+            callback(`\nFido's all done...`);
+            callback(`\nFido's back inside...`);
+            clearTimeout(timer);
+        }, 1000);
+    } 
+
 }

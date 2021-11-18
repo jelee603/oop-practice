@@ -7,6 +7,7 @@ const remote = new Remote(door);
 
 const DogDoorSimulator = () => {
     const [log, setLog] = useState(['']);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     const spanStyle = {
         display: "block",
@@ -17,8 +18,8 @@ const DogDoorSimulator = () => {
     };
     
     function onClick() {
-        showLog('Pressing the remote control button...');
         remote.pressButton(showLog);
+        setButtonDisabled(true);
     }
 
     function showLog(text: string) {
@@ -27,7 +28,8 @@ const DogDoorSimulator = () => {
 
     return (
     <div>
-        <button type="button" onClick={onClick}>깅아지 문 테스트</button>
+        <div>Pressing the remote control button...</div>
+        <button type="button" onClick={onClick} disabled={buttonDisabled}>깅아지 문 테스트</button>
         <div>{log.map((item: string, index: number) => item !== "" && <span style={spanStyle} key={index}>{item}</span>)}</div>
     </div>
     
