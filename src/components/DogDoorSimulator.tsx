@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BarkRecognizer } from '../classes/DogDoorSimulator/BarkRecognizer';
 import { DogDoor } from '../classes/DogDoorSimulator/DogDoor';
 import { Remote } from '../classes/DogDoorSimulator/Remote';
 
 const door = new DogDoor();
+const recognizer = new BarkRecognizer(door);
 const remote = new Remote(door);
 
 const DogDoorSimulator = () => {
@@ -29,13 +31,21 @@ const DogDoorSimulator = () => {
         setLog((prevArray) => [...prevArray, text]);
     }
 
+    function test() {
+        showLog('Fido starts barking.');
+        recognizer.recognize('Woof', showLog);
+    }
+
+    useEffect(() => {
+        test();
+    }, []);
+
     return (
-    <div>
-        <div>Pressing the remote control button...</div>
-        <button type="button" onClick={onClick} disabled={buttonDisabled}>깅아지 문 테스트</button>
-        <div>{log.map((item: string, index: number) => item !== "" && <span style={spanStyle} key={index}>{item}</span>)}</div>
-    </div>
-    
+        <div>
+            <div>Pressing the remote control button...</div>
+            <button type="button" onClick={onClick} disabled={buttonDisabled}>깅아지 문 테스트</button>
+            <div>{log.map((item: string, index: number) => item !== "" && <span style={spanStyle} key={index}>{item}</span>)}</div>
+        </div>     
     );
 
 };

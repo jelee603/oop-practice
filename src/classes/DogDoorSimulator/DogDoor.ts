@@ -7,9 +7,9 @@ export class DogDoor {
 
     open = (callback: Function) => {
         console.log('The dog door opens');
-   
         this.isOpen = true;
-        callback('The dog door opens'); 
+
+        callback('The dog door opens');
     }
 
     close = (callback: Function) => {
